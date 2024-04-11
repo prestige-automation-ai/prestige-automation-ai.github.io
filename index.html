@@ -58,5 +58,58 @@
     <p>© 2024 Chatbot Solutions. All rights reserved.</p>
 </div>
 
+    <script src="https://prestige-automation-ai.github.io/main/extensions.js"></script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        function _vf_load() {
+            window.voiceflow.chat.load({
+                url: 'https://general-runtime.voiceflow.com',
+                verify: { projectID: '660bede2b2cecb6dffeae20a' },
+                versionID: 'production',
+                user: {
+                    name: 'Development User',
+                },
+                render: {
+                    mode: 'overlay',
+                },
+                autostart: true,
+                allowDangerousHTML: false,
+            });
+        }
+    </script>
+    <script type="module">
+        import { VideoExtension, TimerExtension, FormExtension, FormExtensionWithDropdown, MapExtension, FileUploadExtension, KBUploadExtension, DateExtension, ConfettiExtension, FeedbackExtension } from 'https://prestige-automation-ai.github.io/main/extensions.js';
+
+        (function (d, t) {
+            var v = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            v.onload = function () {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '660bede2b2cecb6dffeae20a' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production',
+                    user: {
+                        name: 'Demo User',
+                    },
+                    render: {
+                        mode: 'overlay',
+                    },
+                    autostart: true,
+                    allowDangerousHTML: true,
+                    assistant: {
+                        extensions: [
+                            VideoExtension, TimerExtension, FormExtension, FormExtensionWithDropdown, MapExtension, FileUploadExtension, KBUploadExtension, DateExtension, ConfettiExtension, FeedbackExtension,
+                        ],
+                        //stylesheet: "styles.css"
+                    },
+                });
+            };
+            v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
+            v.type = 'text/javascript';
+            s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
 </body>
 </html>
