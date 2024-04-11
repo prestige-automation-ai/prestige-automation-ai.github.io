@@ -35,18 +35,18 @@ footer button.vfrc-button--primary::after {
   color: #ffffff;
 }
 
-.vfrc-prompt button.vfrc-button--primary[label=Annuler]::after,
-footer button.vfrc-button--primary[label=Annuler]::after {
+.vfrc-prompt button.vfrc-button--primary[label=Cancel]::after,
+footer button.vfrc-button--primary[label=Cancel]::after {
   color: rgba(0, 0, 0, 0.9);
 }
 
 .vfrc-chat-input textarea:-moz-placeholder-shown {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='250px'><text x='15' y='25' fill='silver' font-family='verdana' font-size='11'>Écrivez votre message...</text></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='250px'><text x='15' y='25' fill='silver' font-family='verdana' font-size='11'>Ecrivez votre message ...</text></svg>");
   background-repeat: no-repeat;
 }
 
 .vfrc-chat-input textarea:placeholder-shown {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='250px'><text x='15' y='25' fill='silver' font-family='verdana' font-size='11'>Écrivez votre message...</text></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='250px'><text x='15' y='25' fill='silver' font-family='verdana' font-size='11'>Ecrivez votre message ...</text></svg>");
   background-repeat: no-repeat;
 }
 
@@ -55,13 +55,13 @@ footer button.vfrc-button--primary::after {
   content: "Commencer une nouvelle conversation";
 }
 
-.vfrc-prompt button.vfrc-button--primary[label="Terminer cette conversation"]::after,
-footer button.vfrc-button--primary[label="Terminer cette conversation"]::after {
-  content: "Chat Beenden";
+.vfrc-prompt button.vfrc-button--primary[label="End Chat"]::after,
+footer button.vfrc-button--primary[label="End Chat"]::after {
+  content: "Terminer cette conversation";
 }
 
-.vfrc-prompt button.vfrc-button--primary[label=Annuler]::after,
-footer button.vfrc-button--primary[label=Annuler]::after {
+.vfrc-prompt button.vfrc-button--primary[label=Cancel]::after,
+footer button.vfrc-button--primary[label=Cancel]::after {
   content: "Annuler";
   color: rgba(0, 0, 0, 0.9);
 }
