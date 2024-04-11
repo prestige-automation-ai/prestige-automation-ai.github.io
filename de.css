@@ -32,7 +32,7 @@ footer button.vfrc-button--primary::after {
   align-items: center;
   justify-content: center;
   inset: 0;
-  color: #ffffff;
+  
 }
 
 .vfrc-prompt button.vfrc-button--primary[label=Cancel]::after,
