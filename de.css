@@ -37,7 +37,7 @@ footer button.vfrc-button--primary::after {
 
 .vfrc-prompt button.vfrc-button--primary[label=Cancel]::after,
 footer button.vfrc-button--primary[label=Cancel]::after {
-  color: rgba(0, 0, 0, 0.9);
+ 
 }
 
 .vfrc-chat-input textarea:-moz-placeholder-shown {
@@ -63,5 +63,5 @@ footer button.vfrc-button--primary[label="End Chat"]::after {
 .vfrc-prompt button.vfrc-button--primary[label=Cancel]::after,
 footer button.vfrc-button--primary[label=Cancel]::after {
   content: "Annuler";
-  color: rgba(0, 0, 0, 0.9);
+  
 }
