@@ -52,16 +52,16 @@ footer button.vfrc-button--primary[label=Cancel]::after {
 
 .vfrc-prompt button.vfrc-button--primary::after,
 footer button.vfrc-button--primary::after {
-  content: "Neuen Chat Starten";
+  content: "Commencer nouvelle convo";
 }
 
 .vfrc-prompt button.vfrc-button--primary[label="End Chat"]::after,
 footer button.vfrc-button--primary[label="End Chat"]::after {
-  content: "Chat Beenden";
+  content: "Terminer";
 }
 
 .vfrc-prompt button.vfrc-button--primary[label=Cancel]::after,
 footer button.vfrc-button--primary[label=Cancel]::after {
-  content: "Abbrechen";
+  content: "Annuler";
   color: rgba(0, 0, 0, 0.9);
 }
