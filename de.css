@@ -41,23 +41,23 @@ footer button.vfrc-button--primary[label=Cancel]::after {
 }
 
 .vfrc-chat-input textarea:-moz-placeholder-shown {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='250px'><text x='15' y='25' fill='silver' font-family='verdana' font-size='11'>Nachricht...</text></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='250px'><text x='15' y='25' fill='silver' font-family='verdana' font-size='11'>Votre message...</text></svg>");
   background-repeat: no-repeat;
 }
 
 .vfrc-chat-input textarea:placeholder-shown {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='250px'><text x='15' y='25' fill='silver' font-family='verdana' font-size='11'>Nachricht...</text></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='50px' width='250px'><text x='15' y='25' fill='silver' font-family='verdana' font-size='11'>Votre message...</text></svg>");
   background-repeat: no-repeat;
 }
 
 .vfrc-prompt button.vfrc-button--primary::after,
 footer button.vfrc-button--primary::after {
-  content: "Commencer nouvelle convo";
+  content: "Commencer nouvelle conversation";
 }
 
 .vfrc-prompt button.vfrc-button--primary[label="End Chat"]::after,
 footer button.vfrc-button--primary[label="End Chat"]::after {
-  content: "Terminer";
+  content: "Terminer cette conversation";
 }
 
 .vfrc-prompt button.vfrc-button--primary[label=Cancel]::after,
