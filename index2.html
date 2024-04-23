@@ -1,0 +1,49 @@
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+    function _vf_load() {
+        window.voiceflow.chat.load({
+            url: 'https://general-runtime.voiceflow.com',
+            verify: { projectID: '662649f20d7189e2f702ba7c' }, // Updated project ID
+            versionID: 'production',
+            user: {
+                name: 'Development User',
+            },
+            render: {
+                mode: 'overlay',
+            },
+            autostart: true,
+            allowDangerousHTML: false,
+        });
+    }
+</script>
+<script type="module">
+    import { VideoExtension, TimerExtension, HousingPreferencesForm, MapExtension, FileUploadExtension, KBUploadExtension, DateExtension, ConfettiExtension, FeedbackExtension } from 'https://prestige-automation-ai.github.io/extensions2.js'; // Updated source and included the new form
+
+    (function (d, t) {
+        var v = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        v.onload = function () {
+            window.voiceflow.chat.load({
+                verify: { projectID: '662649f20d7189e2f702ba7c' }, // Updated project ID
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                user: {
+                    name: 'Demo User',
+                },
+                render: {
+                    mode: 'overlay',
+                },
+                autostart: true,
+                allowDangerousHTML: true,
+                assistant: { stylesheet: "https://prestige-automation-ai.github.io/de.css",
+                    extensions: [
+                        VideoExtension, TimerExtension, HousingPreferencesForm, MapExtension, FileUploadExtension, KBUploadExtension, DateExtension, ConfettiExtension, FeedbackExtension,
+                    ],
+                },
+            });
+        };
+        v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
+        v.type = 'module'; // Changed to 'module' to support ES module import syntax
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+</script>
