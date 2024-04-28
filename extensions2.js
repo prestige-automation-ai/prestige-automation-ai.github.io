@@ -28,52 +28,59 @@ export const DateAndTimePicker = {
     formContainer.innerHTML = `
       <style>
         .datetime-form {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          background-color: #f9f9f9;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+          font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #ffffff;
+          padding: 25px;
+          border-radius: 12px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           max-width: 360px;
           margin: auto;
           display: flex;
           flex-direction: column;
+          gap: 16px;
         }
         label {
-          margin-bottom: 10px;
-          font-weight: bold;
-          color: #555;
+          font-size: 14px;
+          font-weight: 500;
+          color: #333;
         }
         select, input[type="date"] {
           width: 100%;
-          padding: 12px;
-          margin-top: 5px;
-          border: 1px solid #ddd;
-          border-radius: 5px;
+          padding: 10px 15px;
+          margin-top: 8px;
+          border: 2px solid #ccc;
+          border-radius: 8px;
           box-sizing: border-box;
+          transition: border-color 0.3s;
+        }
+        select:focus, input[type="date"]:focus {
+          border-color: #0056b3;
+          outline: none;
         }
         input[type="submit"] {
           background-color: #007BFF;
           color: white;
           padding: 12px;
           border: none;
-          border-radius: 5px;
+          border-radius: 8px;
           cursor: pointer;
-          margin-top: 15px;
+          font-weight: bold;
+          transition: background-color 0.3s;
         }
         input[type="submit"]:hover {
           background-color: #0056b3;
         }
       </style>
-    <div class="datetime-form">
-      <label for="date">Choix de la date</label>
-      <input type="date" id="date" name="date" required>
-      <label for="time">Choix de l'heure</label>
-      <select id="time" name="time" required>
-        ${generateTimeOptions()}
-      </select>
-      <input type="submit" value="Envoyer">
-    </div>
-  `;
+      <div class="datetime-form">
+        <label for="date">Choix de la date</label>
+        <input type="date" id="date" name="date" required>
+        <label for="time">Choix de l'heure</label>
+        <select id="time" name="time" required>
+          ${generateTimeOptions()}
+        </select>
+        <input type="submit" value="Envoyer">
+      </div>
+    `;
 
     formContainer.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -91,6 +98,7 @@ export const DateAndTimePicker = {
     element.appendChild(formContainer);
   },
 };
+
 
 
 
