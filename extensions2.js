@@ -49,7 +49,7 @@ export const DateAndTimePicker = {
         <label for="date">Choose a date:</label>
         <input type="date" id="date" name="date" required>
         <label for="time">Choose a time:</label>
-        <input type="time" id="time" name="time" required>
+        <input type="time" id="time" name="time" required step="1800">
         <input type="submit" value="Submit">
       </div>
     `;
@@ -70,6 +70,7 @@ export const DateAndTimePicker = {
     element.appendChild(formContainer);
   },
 };
+
 
 
 export const HousingPreferencesForm = {
