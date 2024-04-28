@@ -37,7 +37,7 @@ export const DateAndTimePicker = {
           margin: auto;
         }
         label {
-          margin-bottom: 8px;
+          margin-bottom: 5px;
           display: block;
           color: #333;
         }
@@ -57,7 +57,7 @@ export const DateAndTimePicker = {
           border: none;
           border-radius: 4px;
           cursor: pointer;
-          margin-top: 20px;
+          margin-top: 15px;
         }
         input[type="submit"]:hover {
           background-color: #45a049;
