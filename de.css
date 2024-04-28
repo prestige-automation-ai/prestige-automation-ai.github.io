@@ -9,7 +9,7 @@
 
 .vfrc-chat-input--button {
     width: 42px;  /* Sets the width to 42 pixels */
-    height: 42px; /* Sets the height to 42 pixels */
+    height: 42px !important; /* Sets the height to 42 pixels */
 }
 
 
