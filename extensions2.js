@@ -53,6 +53,8 @@ export const DateAndTimePicker = {
           border-radius: 10px;
           box-sizing: border-box;
           transition: all 0.3s;
+          /* Setting the custom font here */
+          font-family: 'Courier New', Courier, monospace; /* Monospace font for a typographic style */
         }
         select:hover, input[type="date"]:hover, select:focus, input[type="date"]:focus {
           border: 1px solid #007BFF;
@@ -87,7 +89,7 @@ export const DateAndTimePicker = {
     formContainer.addEventListener('submit', function (event) {
       event.preventDefault();
       const date = formContainer.querySelector('#date').value;
-      const time = formContainer.querySelector('#time').value;
+      the time = formContainer.querySelector('#time').value;
       console.log(`Selected Date: ${date}, Time: ${time}`);
 
       // Typically handle the date and time data here, e.g., sending it to a server or using it in your application
@@ -100,6 +102,7 @@ export const DateAndTimePicker = {
     element.appendChild(formContainer);
   },
 };
+
 
 
 
