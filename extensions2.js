@@ -30,7 +30,7 @@ export const DateAndTimePicker = {
         .datetime-form {
           font-family: Arial, sans-serif;
           background-color: #fff;
-          padding: 20px;
+          padding: 15px;
           border-radius: 10px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           max-width: 400px;
@@ -57,7 +57,7 @@ export const DateAndTimePicker = {
           border: none;
           border-radius: 4px;
           cursor: pointer;
-          margin-top: 15px;
+          margin-top: 13px;
         }
         input[type="submit"]:hover {
           background-color: #45a049;
