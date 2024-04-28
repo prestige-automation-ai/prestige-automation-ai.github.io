@@ -54,7 +54,7 @@ export const DateAndTimePicker = {
           box-sizing: border-box;
           transition: all 0.3s;
           /* Setting the custom font here */
-          font-family: 'Courier New', Courier, monospace; /* Monospace font for a typographic style */
+          font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         select:hover, input[type="date"]:hover, select:focus, input[type="date"]:focus {
           border: 1px solid #007BFF;
