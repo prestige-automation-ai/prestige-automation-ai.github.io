@@ -7,6 +7,12 @@
   color: transparent;
 }
 
+.vfrc-chat-input--button {
+    width: 42px;  /* Sets the width to 42 pixels */
+    height: 42px; /* Sets the height to 42 pixels */
+}
+
+
 .vfrc-chat-input textarea {
   height: 42px; /* Fixe la hauteur à 42 pixels */
   min-height: 42px; /* Empêche la réduction de la hauteur en-dessous de 42 pixels */
