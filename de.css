@@ -8,6 +8,9 @@
 }
 
 .vfrc-chat-input textarea {
+  height: 42px; /* Fixe la hauteur à 42 pixels */
+  min-height: 42px; /* Empêche la réduction de la hauteur en-dessous de 42 pixels */
+  max-height: 42px; 
   background-image: none;
 }
 
