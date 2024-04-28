@@ -49,7 +49,7 @@ export const DateAndTimePicker = {
         <label for="date">Choose a date:</label>
         <input type="date" id="date" name="date" required>
         <label for="time">Choose a time:</label>
-        <input type="time" id="time" name="time" required step="900" min="00:00" max="23:45">
+        <input type="time" id="time" name="time" required step="900" min="08:00" max="18:00">
         <input type="submit" value="Submit">
       </div>
     `;
