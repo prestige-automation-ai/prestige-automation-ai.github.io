@@ -76,13 +76,13 @@ export const DateAndTimePicker = {
         }
       </style>
       <div class="datetime-form">
-        <label for="date">Choose a date</label>
+        <label for="date">Choix de la date</label>
         <input type="date" id="date" name="date" required>
-        <label for="time">Choose a time</label>
+        <label for="time">Choix de l'heure</label>
         <select id="time" name="time" required>
           ${generateTimeOptions()}
         </select>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Réserver">
       </div>
     `;
 
