@@ -29,40 +29,42 @@ export const DateAndTimePicker = {
       <style>
         .datetime-form {
           font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          background-color: #ffffff;
-          padding: 25px;
-          border-radius: 12px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          max-width: 360px;
-          margin: auto;
+          background: linear-gradient(145deg, #e6e6e6, #ffffff);
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          max-width: 380px;
+          margin: 20px auto;
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          gap: 20px;
         }
         label {
-          font-size: 14px;
-          font-weight: 500;
-          color: #333;
+          font-size: 16px;
+          font-weight: 600;
+          color: #334;
         }
         select, input[type="date"] {
           width: 100%;
-          padding: 10px 15px;
-          margin-top: 8px;
-          border: 2px solid #ccc;
-          border-radius: 8px;
+          padding: 12px 20px;
+          margin-top: 10px;
+          border: 1px solid transparent;
+          background-color: #f8f9fa;
+          border-radius: 10px;
           box-sizing: border-box;
-          transition: border-color 0.3s;
+          transition: all 0.3s;
         }
-        select:focus, input[type="date"]:focus {
-          border-color: #0056b3;
+        select:hover, input[type="date"]:hover, select:focus, input[type="date"]:focus {
+          border: 1px solid #007BFF;
+          background-color: #ffffff;
           outline: none;
         }
         input[type="submit"] {
           background-color: #007BFF;
           color: white;
-          padding: 12px;
+          padding: 15px;
           border: none;
-          border-radius: 8px;
+          border-radius: 10px;
           cursor: pointer;
           font-weight: bold;
           transition: background-color 0.3s;
@@ -72,13 +74,13 @@ export const DateAndTimePicker = {
         }
       </style>
       <div class="datetime-form">
-        <label for="date">Choix de la date</label>
+        <label for="date">Choose a date</label>
         <input type="date" id="date" name="date" required>
-        <label for="time">Choix de l'heure</label>
+        <label for="time">Choose a time</label>
         <select id="time" name="time" required>
           ${generateTimeOptions()}
         </select>
-        <input type="submit" value="Envoyer">
+        <input type="submit" value="Submit">
       </div>
     `;
 
@@ -88,7 +90,7 @@ export const DateAndTimePicker = {
       const time = formContainer.querySelector('#time').value;
       console.log(`Selected Date: ${date}, Time: ${time}`);
 
-      // Here you would typically handle the date and time data, e.g., sending it to a server or using it in your application
+      // Typically handle the date and time data here, e.g., sending it to a server or using it in your application
       window.voiceflow.chat.interact({
         type: 'complete',
         payload: { date, time }
