@@ -89,7 +89,7 @@ export const DateAndTimePicker = {
     formContainer.addEventListener('submit', function (event) {
       event.preventDefault();
       const date = formContainer.querySelector('#date').value;
-      the time = formContainer.querySelector('#time').value;
+      const time = formContainer.querySelector('#time').value;
       console.log(`Selected Date: ${date}, Time: ${time}`);
 
       // Typically handle the date and time data here, e.g., sending it to a server or using it in your application
