@@ -27,45 +27,43 @@ export const DateAndTimePicker = {
     const formContainer = document.createElement('form');
     formContainer.innerHTML = `
       <style>
-      .datetime-form {
-        font-family: Arial, sans-serif;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-width: 400px;
-        max-height: 300px; /* Limit the height */
-        overflow-y: auto; /* Enable scrolling */
-        margin: 10px auto 20px; /* Provide sufficient margin */
-        display: flex;
-        flex-direction: column;
-      }
-      label {
-        margin-bottom: 8px;
-        display: block;
-        color: #333;
-      }
-      select, input[type="date"] {
-        width: 100%;
-        padding: 10px;
-        margin-top: 4px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
-      input[type="submit"] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-top: auto; /* Pushes the submit button to the bottom */
-      }
-      input[type="submit"]:hover {
-        background-color: #45a049;
-      }
-    </style>
+        .datetime-form {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #f9f9f9;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+          max-width: 360px;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+        }
+        label {
+          margin-bottom: 10px;
+          font-weight: bold;
+          color: #555;
+        }
+        select, input[type="date"] {
+          width: 100%;
+          padding: 12px;
+          margin-top: 5px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          box-sizing: border-box;
+        }
+        input[type="submit"] {
+          background-color: #007BFF;
+          color: white;
+          padding: 12px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 15px;
+        }
+        input[type="submit"]:hover {
+          background-color: #0056b3;
+        }
+      </style>
     <div class="datetime-form">
       <label for="date">Choix de la date</label>
       <input type="date" id="date" name="date" required>
