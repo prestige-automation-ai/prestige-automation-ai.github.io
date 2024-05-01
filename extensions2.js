@@ -25,6 +25,10 @@ export const DateAndTimePicker = {
     trace.type === 'ext_dateTimePicker' || trace.payload.name === 'ext_dateTimePicker',
   render: ({ trace, element }) => {
     const formContainer = document.createElement('form');
+
+    // Get today's date in YYYY-MM-DD format for the min attribute
+    const today = new Date().toISOString().split('T')[0];
+
     formContainer.innerHTML = `
       <style>
         .datetime-form {
@@ -53,8 +57,6 @@ export const DateAndTimePicker = {
           border-radius: 10px;
           box-sizing: border-box;
           transition: all 0.3s;
-          /* Setting the custom font here */
-          font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         select:hover, input[type="date"]:hover, select:focus, input[type="date"]:focus {
           border: 1px solid #007BFF;
@@ -77,7 +79,7 @@ export const DateAndTimePicker = {
       </style>
       <div class="datetime-form">
         <label for="date">Choix de la date</label>
-        <input type="date" id="date" name="date" required>
+        <input type="date" id="date" name="date" min="${today}" required>
         <label for="time">Choix de l'heure</label>
         <select id="time" name="time" required>
           ${generateTimeOptions()}
@@ -102,13 +104,12 @@ export const DateAndTimePicker = {
         type: 'complete',
         payload: { date, time }
       });
-      
     });
 
     element.appendChild(formContainer);
-    
   },
 };
+
 
 
 
