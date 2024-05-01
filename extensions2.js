@@ -100,8 +100,8 @@ export const DateAndTimePicker = {
       
     });
 
-    //element.appendChild(formContainer);
-    element.remove(formContainer);
+    element.appendChild(formContainer);
+    
   },
 };
 
