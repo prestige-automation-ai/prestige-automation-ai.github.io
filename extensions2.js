@@ -97,10 +97,11 @@ export const DateAndTimePicker = {
         type: 'complete',
         payload: { date, time }
       });
-      element.removeChild(formContainer);
+      
     });
 
-    element.appendChild(formContainer);
+    //element.appendChild(formContainer);
+    element.remove(formContainer);
   },
 };
 
