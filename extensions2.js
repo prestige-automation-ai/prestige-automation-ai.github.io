@@ -99,7 +99,7 @@ export const DateAndTimePicker = {
       });
     });
 
-    formContainer.remove();
+    element.remove(formContainer);
   },
 };
 
