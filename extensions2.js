@@ -92,6 +92,11 @@ export const DateAndTimePicker = {
       const time = formContainer.querySelector('#time').value;
       console.log(`Selected Date: ${date}, Time: ${time}`);
 
+      // Disable form elements
+      formContainer.querySelector('#date').disabled = true;
+      formContainer.querySelector('#time').disabled = true;
+      formContainer.querySelector('input[type="submit"]').disabled = true;
+
       // Typically handle the date and time data here, e.g., sending it to a server or using it in your application
       window.voiceflow.chat.interact({
         type: 'complete',
