@@ -87,30 +87,38 @@ export const DateRangePicker = {
         <input type="date" id="start-date" name="start-date" required min="${minDate}" max="${formattedMaxDate}">
         <label for="end-date">Date de fin</label>
         <input type="date" id="end-date" name="end-date" required min="${minDate}" max="${formattedMaxDate}">
-        <input type="submit" value="Réserver">
+        <input type="submit" value="Récupérer Infos">
       </div>
     `;
+
+    const dateRangeSelector = formContainer.querySelector('#date-range');
+    const startDateInput = formContainer.querySelector('#start-date');
+    const endDateInput = formContainer.querySelector('#end-date');
+
+    dateRangeSelector.addEventListener('change', function () {
+      const today = new Date();
+      const todayString = today.toISOString().split('T')[0];
+
+      if (dateRangeSelector.value === 'today') {
+        startDateInput.value = todayString;
+        endDateInput.value = todayString;
+      } else if (dateRangeSelector.value === 'week') {
+        const endOfWeek = new Date(today);
+        endOfWeek.setDate(today.getDate() + (7 - today.getDay()));
+        startDateInput.value = todayString;
+        endDateInput.value = endOfWeek.toISOString().split('T')[0];
+      } else if (dateRangeSelector.value === 'month') {
+        const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+        startDateInput.value = todayString;
+        endDateInput.value = endOfMonth.toISOString().split('T')[0];
+      }
+    });
 
     formContainer.addEventListener('submit', function (event) {
       event.preventDefault();
       const dateRange = formContainer.querySelector('#date-range').value;
-      let startDate = formContainer.querySelector('#start-date').value;
-      let endDate = formContainer.querySelector('#end-date').value;
-
-      const today = new Date();
-      const todayString = today.toISOString().split('T')[0];
-
-      if (dateRange === 'today') {
-        startDate = todayString;
-        endDate = todayString;
-      } else if (dateRange === 'week') {
-        const endOfWeek = new Date(today);
-        endOfWeek.setDate(today.getDate() + (7 - today.getDay()));
-        endDate = endOfWeek.toISOString().split('T')[0];
-      } else if (dateRange === 'month') {
-        const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-        endDate = endOfMonth.toISOString().split('T')[0];
-      }
+      const startDate = formContainer.querySelector('#start-date').value;
+      const endDate = formContainer.querySelector('#end-date').value;
 
       console.log(`Selected Date Range: ${dateRange}, Start Date: ${startDate}, End Date: ${endDate}`);
 
@@ -129,6 +137,7 @@ export const DateRangePicker = {
     element.appendChild(formContainer);
   },
 };
+
 
 export const DateAndTimePicker = {
   name: 'DateAndTimePicker',
