@@ -87,7 +87,7 @@ export const DateRangePicker = {
         <input type="date" id="start-date" name="start-date" required min="${minDate}" max="${formattedMaxDate}">
         <label for="end-date">Date de fin</label>
         <input type="date" id="end-date" name="end-date" required min="${minDate}" max="${formattedMaxDate}">
-        <input type="submit" value="Récupérer Infos">
+        <input type="submit" value="Valider Dates">
       </div>
     `;
 
