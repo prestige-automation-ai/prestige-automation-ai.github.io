@@ -87,10 +87,6 @@ export const DateRangePicker = {
         <input type="date" id="start-date" name="start-date" required min="${minDate}" max="${formattedMaxDate}">
         <label for="end-date">Date de fin</label>
         <input type="date" id="end-date" name="end-date" required min="${minDate}" max="${formattedMaxDate}">
-        <label for="time">Choix de l'heure</label>
-        <select id="time" name="time" required>
-          ${generateTimeOptions()}
-        </select>
         <input type="submit" value="Réserver">
       </div>
     `;
@@ -98,21 +94,35 @@ export const DateRangePicker = {
     formContainer.addEventListener('submit', function (event) {
       event.preventDefault();
       const dateRange = formContainer.querySelector('#date-range').value;
-      const startDate = formContainer.querySelector('#start-date').value;
-      const endDate = formContainer.querySelector('#end-date').value;
-      const time = formContainer.querySelector('#time').value;
-      console.log(`Selected Date Range: ${dateRange}, Start Date: ${startDate}, End Date: ${endDate}, Time: ${time}`);
+      let startDate = formContainer.querySelector('#start-date').value;
+      let endDate = formContainer.querySelector('#end-date').value;
+
+      const today = new Date();
+      const todayString = today.toISOString().split('T')[0];
+
+      if (dateRange === 'today') {
+        startDate = todayString;
+        endDate = todayString;
+      } else if (dateRange === 'week') {
+        const endOfWeek = new Date(today);
+        endOfWeek.setDate(today.getDate() + (7 - today.getDay()));
+        endDate = endOfWeek.toISOString().split('T')[0];
+      } else if (dateRange === 'month') {
+        const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+        endDate = endOfMonth.toISOString().split('T')[0];
+      }
+
+      console.log(`Selected Date Range: ${dateRange}, Start Date: ${startDate}, End Date: ${endDate}`);
 
       formContainer.querySelector('#date-range').disabled = true;
       formContainer.querySelector('#start-date').disabled = true;
       formContainer.querySelector('#end-date').disabled = true;
-      formContainer.querySelector('#time').disabled = true;
       formContainer.querySelector('input[type="submit"]').disabled = true;
 
-      // Typically handle the date and time data here, e.g., sending it to a server or using it in your application
+      // Typically handle the date data here, e.g., sending it to a server or using it in your application
       window.voiceflow.chat.interact({
         type: 'complete',
-        payload: { dateRange, startDate, endDate, time }
+        payload: { dateRange, startDate, endDate }
       });
     });
 
