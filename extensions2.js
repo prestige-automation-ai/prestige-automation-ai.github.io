@@ -14,7 +14,111 @@ function generateTimeOptions() {
   return options;
 }
 
+export const DateAndTimePicker2 = {
+  name: 'DateAndTimePicker2',
+  type: 'response',
+  match: ({ trace }) =>
+    trace.type === 'ext_dateTimePicker2' || trace.payload.name === 'ext_dateTimePicker2',
+  render: ({ trace, element }) => {
+    const currentDate = new Date();
+    const minDate = currentDate.toISOString().split('T')[0]; // format as 'YYYY-MM-DD'
+    const maxDate = new Date();
+    maxDate.setFullYear(currentDate.getFullYear() + 1);
+    const formattedMaxDate = maxDate.toISOString().split('T')[0];
 
+    const formContainer = document.createElement('form');
+    formContainer.innerHTML = `
+      <style>
+        .datetime-form {
+          font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background: linear-gradient(145deg, #e6e6e6, #ffffff);
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          max-width: 380px;
+          margin: 20px auto;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        label {
+          font-size: 16px;
+          font-weight: 600;
+          color: #334;
+        }
+        select, input[type="date"] {
+          width: 100%;
+          padding: 12px 20px;
+          margin-top: 10px;
+          border: 1px solid transparent;
+          background-color: #f8f9fa;
+          border-radius: 10px;
+          box-sizing: border-box;
+          transition: all 0.3s;
+          font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        select:hover, input[type="date"]:hover, select:focus, input[type="date"]:focus {
+          border: 1px solid #007BFF;
+          background-color: #ffffff;
+          outline: none;
+        }
+        input[type="submit"] {
+          background-color: #007BFF;
+          color: white;
+          padding: 15px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          font-weight: bold;
+          transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+          background-color: #0056b3;
+        }
+      </style>
+      <div class="datetime-form">
+        <label for="date-range">Choix de la période</label>
+        <select id="date-range" name="date-range" required>
+          <option value="today">Aujourd'hui</option>
+          <option value="week">Semaine</option>
+          <option value="month">Mois</option>
+        </select>
+        <label for="start-date">Date de début</label>
+        <input type="date" id="start-date" name="start-date" required min="${minDate}" max="${formattedMaxDate}">
+        <label for="end-date">Date de fin</label>
+        <input type="date" id="end-date" name="end-date" required min="${minDate}" max="${formattedMaxDate}">
+        <label for="time">Choix de l'heure</label>
+        <select id="time" name="time" required>
+          ${generateTimeOptions()}
+        </select>
+        <input type="submit" value="Réserver">
+      </div>
+    `;
+
+    formContainer.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const dateRange = formContainer.querySelector('#date-range').value;
+      const startDate = formContainer.querySelector('#start-date').value;
+      const endDate = formContainer.querySelector('#end-date').value;
+      const time = formContainer.querySelector('#time').value;
+      console.log(`Selected Date Range: ${dateRange}, Start Date: ${startDate}, End Date: ${endDate}, Time: ${time}`);
+
+      formContainer.querySelector('#date-range').disabled = true;
+      formContainer.querySelector('#start-date').disabled = true;
+      formContainer.querySelector('#end-date').disabled = true;
+      formContainer.querySelector('#time').disabled = true;
+      formContainer.querySelector('input[type="submit"]').disabled = true;
+
+      // Typically handle the date and time data here, e.g., sending it to a server or using it in your application
+      window.voiceflow.chat.interact({
+        type: 'complete',
+        payload: { dateRange, startDate, endDate, time }
+      });
+    });
+
+    element.appendChild(formContainer);
+  },
+};
 export const DateAndTimePicker = {
   name: 'DateAndTimePicker',
   type: 'response',
