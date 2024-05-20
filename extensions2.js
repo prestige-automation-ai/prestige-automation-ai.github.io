@@ -14,11 +14,11 @@ function generateTimeOptions() {
   return options;
 }
 
-export const DateAndTimePicker2 = {
-  name: 'DateAndTimePicker2',
+export const DateRangePicker = {
+  name: 'DateRangePicker',
   type: 'response',
   match: ({ trace }) =>
-    trace.type === 'ext_dateTimePicker2' || trace.payload.name === 'ext_dateTimePicker2',
+    trace.type === 'ext_dateRangePicker' || trace.payload.name === 'ext_dateRangePicker',
   render: ({ trace, element }) => {
     const currentDate = new Date();
     const minDate = currentDate.toISOString().split('T')[0]; // format as 'YYYY-MM-DD'
@@ -119,6 +119,7 @@ export const DateAndTimePicker2 = {
     element.appendChild(formContainer);
   },
 };
+
 export const DateAndTimePicker = {
   name: 'DateAndTimePicker',
   type: 'response',
